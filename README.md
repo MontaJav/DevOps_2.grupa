@@ -1,1 +1,1 @@
-# DevOps_grupa
+# DevOps_2.grupa
