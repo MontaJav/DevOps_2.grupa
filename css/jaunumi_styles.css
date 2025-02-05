@@ -1,0 +1,45 @@
+body {
+    background-color: #d39134;
+}
+img {
+        background-color: #000000;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); 
+        border-radius: 10px;
+        margin-left: 35px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    
+}
+p {
+    font-family: Calibri, sans-serif;
+    padding-left: 35px;
+    width: 800px;
+}
+h3 {
+    font-size: 24px;
+    background: linear-gradient(to right, #8B5E34 0%, transparent 80%);
+    padding-left: 35px;
+    font-family: 'Gill Sans', sans-serif;
+}
+h1 {
+    font-family: 'Gill Sans', sans-serif; 
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    gap: 50px; 
+    padding: 15px;
+}
+
+a {
+    color: rgb(255, 255, 255);
+    background-color: rgb(29, 53, 26);
+    text-decoration: wavy;
+    font-size: 20px;
+    padding: 10px 20px;
+}
