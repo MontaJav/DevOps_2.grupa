@@ -1,0 +1,32 @@
+.logo {
+    height: 50px;
+    width: 100px;
+    background: url('../img/logo.png') no-repeat center;
+    background-size: contain;
+}
+
+figure.tabula {
+    margin-bottom: 60px;
+    
+}
+
+.text-allign-center {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+tr,
+td {
+    border: 0px solid;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(177, 171, 171, 0.11);
+}
+
