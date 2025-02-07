@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="lv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biļetes - Zoo-123</title>
+    <link rel="stylesheet" href="css/biletes.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="header-container">
+        <a href="index.html" class="logo-link">
+          <div class="logo"></div>
+        </a>
+        <a href="grozs.html" class="basket-link">
+          <i class="fas fa-shopping-basket"></i>
+          <span id="cart-count" class="cart-count">0</span>
+        </a>
+      </div>
+
+      <div class="nav-background">
+        <nav class="nav-container">
+          <a href="index.html">Mājas</a>
+          <a href="biletes.html">Biļetes</a>
+          <a href="ekskursijas.html">Ekskursijas</a>
+          <a href="jaunumi.html">Jaunumi</a>
+          <a href="par_mums.html">Par Mums</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="zoo">
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>Biļetes</th>
+            <th>Cena</th>
+            <th>Daudzums</th>
+            <th>Kopā</th>
+          </tr>
+        </thead>
+        <tbody id="cart-items">
+          <!-- Cart items will be dynamically inserted here -->
+        </tbody>
+      </table>
+      <div class="button-container">
+        <button onclick="payForTickets()">Apmaksāt</button>
+      </div>
+    </main>
+    <footer>
+      <small>Zoo-123 &copy; 2025</small>
+    </footer>
+
+    <script>
+      function loadCartItems() {
+        const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+        const cartItemsContainer = document.getElementById("cart-items");
+        const cartCountElement = document.getElementById("cart-count");
+        let totalCount = 0;
+
+        cartItems.forEach((item) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+                    <td>${item.ticketType}</td>
+                    <td>${item.price.toFixed(2)} EUR</td>
+                    <td>${item.quantity}</td>
+                    <td>${item.total.toFixed(2)} EUR</td>
+                `;
+          cartItemsContainer.appendChild(row);
+          totalCount += item.quantity;
+        });
+
+        cartCountElement.textContent = totalCount;
+      }
+
+      function payForTickets() {
+        alert(
+          "Paldies par pirkumu! Jūsu biļetes ir apmaksātas un nosūtītas uz Jūsu epasta adresi."
+        );
+        localStorage.removeItem("cartItems");
+        document.getElementById("cart-items").innerHTML = "";
+        document.getElementById("cart-count").textContent = "0";
+      }
+
+      document.addEventListener("DOMContentLoaded", loadCartItems);
+    </script>
+  </body>
+</html>

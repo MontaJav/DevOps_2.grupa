@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="lv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iegādāties biļetes - Zoo-123</title>
+    <link rel="stylesheet" href="css/biletes.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="header-container">
+        <a href="index.html" class="logo-link">
+          <div class="logo"></div>
+        </a>
+        <a href="grozs.html" class="basket-link">
+          <i class="fas fa-shopping-basket"></i>
+          <span id="cart-count" class="cart-count">0</span>
+        </a>
+      </div>
+
+      <div class="nav-background">
+        <nav class="nav-container">
+          <a href="index.html">Mājas</a>
+          <a href="biletes.html">Biļetes</a>
+          <a href="ekskursijas.html">Ekskursijas</a>
+          <a href="jaunumi.html">Jaunumi</a>
+          <a href="par_mums.html">Par Mums</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="zoo">
+      <table class="ticket-table">
+        <thead>
+          <tr>
+            <th>Biļetes</th>
+            <th>Cena</th>
+            <th>Daudzums</th>
+            <th>Kopā</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pieaugušais</td>
+            <td>15.00 EUR</td>
+            <td>
+              <input
+                type="number"
+                min="0"
+                value="0"
+                onchange="updateTotal(this)"
+              />
+            </td>
+            <td class="total">0.00 EUR</td>
+          </tr>
+          <tr>
+            <td>Bērns</td>
+            <td>7.00 EUR</td>
+            <td>
+              <input
+                type="number"
+                min="0"
+                value="0"
+                onchange="updateTotal(this)"
+              />
+            </td>
+            <td class="total">0.00 EUR</td>
+          </tr>
+          <tr>
+            <td>Students</td>
+            <td>9.00 EUR</td>
+            <td>
+              <input
+                type="number"
+                min="0"
+                value="0"
+                onchange="updateTotal(this)"
+              />
+            </td>
+            <td class="total">0.00 EUR</td>
+          </tr>
+          <tr>
+            <td>Pensionārs</td>
+            <td>5.00 EUR</td>
+            <td>
+              <input
+                type="number"
+                min="0"
+                value="0"
+                onchange="updateTotal(this)"
+              />
+            </td>
+            <td class="total">0.00 EUR</td>
+          </tr>
+          <tr>
+            <td>Ģimenes biļete</td>
+            <td>25.00 EUR</td>
+            <td>
+              <input
+                type="number"
+                min="0"
+                value="0"
+                onchange="updateTotal(this)"
+              />
+            </td>
+            <td class="total">0.00 EUR</td>
+          </tr>
+          <tr>
+            <td>Autostāvvieta</td>
+            <td>10.00 EUR</td>
+            <td>
+              <input
+                type="number"
+                min="0"
+                value="0"
+                onchange="updateTotal(this)"
+              />
+            </td>
+            <td class="total">0.00 EUR</td>
+          </tr>
+          <tr>
+            <td>Gida pakalpojumi</td>
+            <td>80.00 EUR</td>
+            <td>
+              <input
+                type="number"
+                min="0"
+                value="0"
+                onchange="updateTotal(this)"
+              />
+            </td>
+            <td class="total">0.00 EUR</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="button-container">
+        <button onclick="addToCart()">Pievienot grozam</button>
+      </div>
+    </main>
+    <footer>
+      <small>Zoo-123 &copy; 2025</small>
+    </footer>
+
+    <script>
+      function updateTotal(input) {
+        const row = input.parentElement.parentElement;
+        const price = parseFloat(row.cells[1].textContent.replace(" EUR", ""));
+        const quantity = parseInt(input.value);
+        const totalCell = row.querySelector(".total");
+        totalCell.textContent = (price * quantity).toFixed(2) + " EUR";
+      }
+
+      function addToCart() {
+        const cartCountElement = document.getElementById("cart-count");
+        let currentCount = parseInt(cartCountElement.textContent);
+        const inputs = document.querySelectorAll(
+          '.ticket-table input[type="number"]'
+        );
+        let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+        inputs.forEach((input) => {
+          const quantity = parseInt(input.value);
+          if (quantity > 0) {
+            const row = input.parentElement.parentElement;
+            const ticketType = row.cells[0].textContent;
+            const price = parseFloat(
+              row.cells[1].textContent.replace(" EUR", "")
+            );
+            const total = parseFloat(
+              row.querySelector(".total").textContent.replace(" EUR", "")
+            );
+
+            // Check if the item already exists in the cart
+            const existingItemIndex = cartItems.findIndex(
+              (item) => item.ticketType === ticketType
+            );
+            if (existingItemIndex !== -1) {
+              // Update the existing item
+              cartItems[existingItemIndex].quantity += quantity;
+              cartItems[existingItemIndex].total += total;
+            } else {
+              // Add the new item
+              cartItems.push({ ticketType, price, quantity, total });
+            }
+
+            currentCount += quantity;
+            input.value = 0; // Reset the input value
+            updateTotal(input); // Update the total cell
+          }
+        });
+
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+        cartCountElement.textContent = currentCount;
+      }
+    </script>
+  </body>
+</html>
