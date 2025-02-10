@@ -16,6 +16,7 @@
 # **Izmantojamie tehnoloģijas**
 - HTML5
 - CSS3
+- JS
 ***
 # **Uzstādīšana un izmantošana**
 Klonējiet repozitoriju uz savu datoru:

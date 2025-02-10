@@ -1,6 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Navigation Bar */
+#hederis {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    padding: 10px 20px;
+}
+
 .logo {
     height: 50px;
     width: 100px;
     background: url('../img/logo.png') no-repeat center;
     background-size: contain;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-buttons a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 10px 15px;
+
+    border-radius: 0px;
+}
+
+.nav-buttons a:hover {
+    background: #e5c6b1;
+}
+
+/* Hero Section */
+.hero {
+    width: 100%;
+    height: 300px;
+    background: url('../img/zilonis.jpg') no-repeat center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Content */
+.content {
+    padding: 40px;
+    min-height: 300px;
+}
+
+/* Footer */
+#futeris {
+    background: #858585;
+    color: white;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+.image-bumba {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+.image-bumba img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#bodijs {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#customTable {
+    border-collapse: collapse;
+    width: 20%;
+    margin: 20px;
+}
+#cell1, #cell2 {
+    border: none;
+    padding: 30px;
+    margin: 10px;
 }
