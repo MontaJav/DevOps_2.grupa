@@ -1,2 +1,14 @@
-# DevOps_2.grupa
-# DevOps_2._grupa_the_best
+*** 
+# **ZOOdārza" xxx" mājas Lapa**
+
+*** 
+# **Lapu saraksts**
+apraksts
+
+*** 
+# **Izmantojamie tehnoloģijas**
+apraksts
+***
+# **Uzstādīšana un izmantošana**
+
+apraksts
