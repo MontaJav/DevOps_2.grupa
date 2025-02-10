@@ -108,15 +108,14 @@ img {
 img:hover {
     box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5);
 }
-.monthlyleft,
-.monthlyright {
-    display: inline;
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    font-family:'Noto Sans';
 }
-.monthlyleft.img {
-position:absolute;
-}
-.monthlyright.img {
-    position:absolute;
+.text-block {
+    margin-top:100px;
 }
 
 
