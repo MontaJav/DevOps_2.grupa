@@ -3,27 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Iegādāties biļetes - Zoo-123</title>
+    <title>Biļešu izvēlne - Zoo</title>
+    <link rel="stylesheet" href="css/kkindex.css" />
     <link rel="stylesheet" href="css/biletes.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
+    <script src="menu.js" defer></script>
+    <script src="grozs.js" defer></script>
+    <script src="pirkt.js" defer></script>
   </head>
 
   <body>
-    <header>
-      <div class="header-container">
-        <a href="index.html" class="logo-link">
-          <div class="logo"></div>
-        </a>
-        <a href="grozs.html" class="basket-link">
-          <i class="fas fa-shopping-basket"></i>
-          <span id="cart-count" class="cart-count">0</span>
-        </a>
-      </div>
-
-      <div class="nav-background">
+    <header id="hederis">
+      <div class="hero"></div>
         <nav class="nav-container">
           <a href="index.html">Mājas</a>
           <a href="biletes.html">Biļetes</a>
@@ -139,64 +129,10 @@
         </tbody>
       </table>
       <div class="button-container">
-        <button onclick="addToCart()">Pievienot grozam</button>
+        <button class="add-to-cart" onclick="addToCart()">Pievienot grozam</button>
+        <a class="view-cart" href="grozs.html">Apskatīt grozu</a>
       </div>
     </main>
-    <footer>
-      <small>Zoo-123 &copy; 2025</small>
-    </footer>
-
-    <script>
-      function updateTotal(input) {
-        const row = input.parentElement.parentElement;
-        const price = parseFloat(row.cells[1].textContent.replace(" EUR", ""));
-        const quantity = parseInt(input.value);
-        const totalCell = row.querySelector(".total");
-        totalCell.textContent = (price * quantity).toFixed(2) + " EUR";
-      }
-
-      function addToCart() {
-        const cartCountElement = document.getElementById("cart-count");
-        let currentCount = parseInt(cartCountElement.textContent);
-        const inputs = document.querySelectorAll(
-          '.ticket-table input[type="number"]'
-        );
-        let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
-
-        inputs.forEach((input) => {
-          const quantity = parseInt(input.value);
-          if (quantity > 0) {
-            const row = input.parentElement.parentElement;
-            const ticketType = row.cells[0].textContent;
-            const price = parseFloat(
-              row.cells[1].textContent.replace(" EUR", "")
-            );
-            const total = parseFloat(
-              row.querySelector(".total").textContent.replace(" EUR", "")
-            );
-
-            // Check if the item already exists in the cart
-            const existingItemIndex = cartItems.findIndex(
-              (item) => item.ticketType === ticketType
-            );
-            if (existingItemIndex !== -1) {
-              // Update the existing item
-              cartItems[existingItemIndex].quantity += quantity;
-              cartItems[existingItemIndex].total += total;
-            } else {
-              // Add the new item
-              cartItems.push({ ticketType, price, quantity, total });
-            }
-
-            currentCount += quantity;
-            input.value = 0; // Reset the input value
-            updateTotal(input); // Update the total cell
-          }
-        });
-
-        localStorage.setItem("cartItems", JSON.stringify(cartItems));
-        cartCountElement.textContent = currentCount;
-      }
-    </script>
+    <footer id="futeris"></footer>
   </body>
 </html>
