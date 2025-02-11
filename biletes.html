@@ -3,22 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Biļetes - Zoo-123</title>
+    <title>Grozs - Zoo</title>
+    <link rel="stylesheet" href="css/kkindex.css" />
     <link rel="stylesheet" href="css/biletes.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
+    <script src="menu.js" defer></script>
+    <script src="grozs.js" defer></script>
+    <script src="pirkt.js" defer></script>
   </head>
 
   <body>
-    <header>
+    <header id="hederis">
+      <div class="hero"></div>
       <div class="header-container">
         <a href="index.html" class="logo-link">
           <div class="logo"></div>
-        </a>
-        <a href="grozs.html" class="basket-link">
-          <i class="fas fa-shopping-basket"></i>
         </a>
       </div>
 
@@ -34,118 +32,30 @@
     </header>
 
     <main class="zoo">
-      <div class="content-container">
-        <div class="heading-container">
-          <h1>Biļešu cenas</h1>
-          <h2>Labākās cenas lai apskatītu labākos zoodārza iemītniekus</h2>
-        </div>
-
-        <figure class="tabula virsraksts">
-          <div class="table-container">
-            <table class="price-table">
-              <tbody>
-                <tr>
-                  <td>
-                    <strong>PAMATCENA</strong>
-                  </td>
-                  <td class="text-allign-center" data-allign="center">
-                    <strong>Darba dienās</strong>,<br /><strong>EUR</strong>
-                  </td>
-                  <td class="text-allign-center" data-allign="center">
-                    <strong>Brīvdienās</strong>,<br /><strong>EUR</strong>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Pieaugušajiem</td>
-                  <td class="text-allign-center" data-allign="center">15</td>
-                  <td class="text-allign-center" data-allign="center">18</td>
-                </tr>
-                <tr>
-                  <td>Bērniem</td>
-                  <td class="text-allign-center" data-allign="center">7</td>
-                  <td class="text-allign-center" data-allign="center">8</td>
-                </tr>
-                <tr>
-                  <td>Studentiem</td>
-                  <td class="text-allign-center" data-allign="center">9</td>
-                  <td class="text-allign-center" data-allign="center">10</td>
-                </tr>
-                <tr>
-                  <td>Pensionāriem</td>
-                  <td class="text-allign-center" data-allign="center">5</td>
-                  <td class="text-allign-center" data-allign="center">6</td>
-                </tr>
-                <tr>
-                  <td>Ģimenēm</td>
-                  <td class="text-allign-center" data-allign="center">25</td>
-                  <td class="text-allign-center" data-allign="center">27</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </figure>
-
-        <figure class="tabula virsraksts">
-          <table class="price-table">
-            <tbody>
-              <tr>
-                <td>
-                  <strong>AUTOSTĀVVIETA</strong>
-                </td>
-                <td class="text-allign-center" data-allign="center">
-                  <strong>CENA</strong>,<br /><strong>EUR</strong>
-                </td>
-              </tr>
-              <tr>
-                <td>Apmeklētājiem</td>
-                <td class="text-allign-center" data-allign="center">15</td>
-              </tr>
-              <tr>
-                <td>Ģimenēm</td>
-                <td class="text-allign-center" data-allign="center">10</td>
-              </tr>
-              <tr>
-                <td>Invalīdiem</td>
-                <td class="text-allign-center" data-allign="center">7</td>
-              </tr>
-            </tbody>
-          </table>
-        </figure>
-
-        <figure class="tabula virsraksts">
-          <table class="price-table">
-            <tbody>
-              <tr>
-                <td>
-                  <strong>GIDA PAKALPOJUMI</strong>
-                </td>
-                <td class="text-allign-center" data-allign="center">
-                  <strong>CENA</strong>,<br /><strong>EUR</strong>
-                </td>
-              </tr>
-              <tr>
-                <td>Grupām līdz 10 apmeklētājiem</td>
-                <td class="text-allign-center" data-allign="center">80</td>
-              </tr>
-              <tr>
-                <td>Grupām no 15 apmeklētājiem</td>
-                <td class="text-allign-center" data-allign="center">100</td>
-              </tr>
-            </tbody>
-          </table>
-        </figure>
-
-        <div class="text-button-container">
-          <p class="button-text">
-            Lai iegādātos biļetes, lūdzu, noklikšķiniet uz pogas zemāk:
-          </p>
-          <a href="nopirkt.html" class="button">Pirkt Biļetes</a>
-        </div>
+      <table id="cart-items">
+        <thead>
+          <tr>
+            <th>Biļetes veids</th>
+            <th>Cena</th>
+            <th>Daudzums</th>
+            <th>Kopā</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Cart items will be dynamically inserted here -->
+        </tbody>
+        <tfoot>
+          <tr>
+            <td id="summa" colspan="3"><strong>Kopējā summa:</strong></td>
+            <td id="total-price">0.00 EUR</td>
+          </tr>
+        </tfoot>
+      </table>
+      <div class="button-container">
+        <button onclick="payForTickets()">Apmaksāt</button>
       </div>
     </main>
-  </body>
 
-  <footer>
-    <small>Zoo-123 &copy; 2025</small>
-  </footer>
+    <footer id="futeris"></footer>
+  </body>
 </html>
