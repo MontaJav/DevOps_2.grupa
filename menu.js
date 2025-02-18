@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const footHTML = `© 2025 Zoo ©` ;
+  const footHTML = `© 2025 - Zoo ©` ;
   const menuHTML = `
           <div class="logo"></div>
           <div class="nav-buttons">
