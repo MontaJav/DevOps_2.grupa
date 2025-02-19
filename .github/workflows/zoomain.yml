@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - main
+    paths:
+      - '**'         # Paarbauda visus failus
+      - '!README.md' # Neizpildaas ja updeito readme
 
 jobs:
   deploy:
