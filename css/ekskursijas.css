@@ -12,6 +12,12 @@
 
 .text-allign-left {
     text-align: left;
+}
+
+.text-allign-center {
+    text-align: justify;
+    height: 50%;
+  width: 50%;
 } 
 
 .img-center {
@@ -22,19 +28,36 @@
 } 
 
 table {
-    width: 100%;
+    width: 50%;
     border-collapse: collapse;
     background-color:white;
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
 } 
 
 tr,
 td {
-    border: 1px solid #dddddd;
+    border: 0px solid #dddddd;
     text-align: left;
     padding: 8px;
 } 
 
 
+.ekskursijas_banner {
+    width: 100%;
+    height: auto;
+    /*background: no-repeat center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;*/
+    display: block;
+    border-radius: 8px;
+}
 
 /* tr:nth-child(even) {
     background-color: rgba(177, 171, 171, 0.11);
@@ -45,8 +68,8 @@ td {
 
 .poga {
     text-align: left;
-    background-color: #114F5A;
-    color: black;
+    background-color: #D08222;
+    color: #F9EFF7;
     border: none;
     padding: 12px 24px;
     cursor: pointer;
@@ -54,6 +77,15 @@ td {
     font-weight: bold;
     text-transform: uppercase;
 } 
+
+.poga:hover {
+    background-color: #C5C9BC;
+    color: #114F5A;
+  }
+
+
+
+
 .test {
     max-width: 1440px;
     margin: 40px auto;
@@ -63,4 +95,55 @@ td {
     align-items: left;
     border-radius: 8px;
     
+}
+
+
+footer {
+    background-color: #f4f4f4;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contact-info-footer, .social-icons-footer, .footer-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-info-footer p, .footer-links a {
+    font-size: 16px;
+    color: #333;
+    margin: 5px 0;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #333;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.social-icons-footer a {
+    margin: 5px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 14px;
+    color: #777;
+}
+
+.footer-bottom p {
+    margin: 0;
 }
