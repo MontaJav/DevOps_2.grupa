@@ -47,14 +47,6 @@ td {
 .ekskursijas_banner {
     width: 100%;
     height: auto;
-    /*background: no-repeat center;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;*/
     display: block;
     border-radius: 8px;
 }
