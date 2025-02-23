@@ -1,0 +1,29 @@
+# Ja tiek jaunināts zars main, izpildās Job
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**'         # Paarbauda visus failus
+      - '!README.md' # Neizpildaas ja updeito readme
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest #vieta kur izpildīsies uzdevums(github sponsorēta ubuntu virtuālā mašīna)
+    steps:
+      - name: Lejuplaadeet projektu no repo
+        uses: actions/checkout@v4 
+
+      - name: Kopeet failus uz serveri caur SCP
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.KARLIS_SSH_KEY }} #mans ssh private key, uz servera ir mans public key
+        run: |
+          mkdir -p ~/.ssh 
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          scp -o StrictHostKeyChecking=no -r ./* zoomain@zoo.bumba.lv:/home/zoomain/public_html
+
+#mkdir: izveido mapi
+#echo "atslega" > fails: iekopee atsleegu failaa
+#chmod 600 nomiana lasiishanas atlaujas failam jo ssh ir cimperliigs
+#scp kopee failu no mapes uz lietotajs@serveris:mape

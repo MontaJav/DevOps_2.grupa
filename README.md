@@ -23,3 +23,5 @@ Klonējiet repozitoriju uz savu datoru:
 git clone https://github.com/MontaJav/DevOps_2.grupa.git
 
 Atveriet lapas index.html, jebkurā web pārlūkprogrammā.
+
+Lapas paraugs šobrīd automātiski ielādējas uz [zoo.bumba.lv](http://zoo.bumba.lv)
