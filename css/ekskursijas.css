@@ -1,15 +1,20 @@
+/*for header and banner*/
 .logo {
-    height: 50px;
-    width: 100px;
+    height: 60px;
+    width: 160px;
     background: url('../img/logo.png') no-repeat center;
     background-size: contain;
 }
 
-/* figure.tabula {
-    margin-bottom: 60px;
-    
-}*/
+.ekskursijas_banner {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
 
+
+/*body designs*/
 .text-allign-left {
     text-align: left;
 }
@@ -44,20 +49,6 @@ td {
 } 
 
 
-.ekskursijas_banner {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
-}
-
-/* tr:nth-child(even) {
-    background-color: rgba(177, 171, 171, 0.11);
-} */
-
-
-
-
 .poga {
     text-align: left;
     background-color: #D08222;
@@ -76,9 +67,7 @@ td {
   }
 
 
-
-
-.test {
+.body_design {
     max-width: 1440px;
     margin: 40px auto;
     background: white;
@@ -89,6 +78,8 @@ td {
     
 }
 
+
+/*footer*/
 
 footer {
     background-color: #f4f4f4;
