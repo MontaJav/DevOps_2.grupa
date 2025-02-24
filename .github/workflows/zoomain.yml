@@ -2,7 +2,7 @@
 on:
   push:
     branches:
-      - main
+      - Monta_branch
     paths:
       - '**'         # Paarbauda visus failus
       - '!README.md' # Neizpildaas ja updeito readme
