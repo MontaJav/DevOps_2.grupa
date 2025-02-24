@@ -16,12 +16,12 @@ jobs:
 
       - name: Kopeet failus uz serveri caur SCP
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.KARLIS_SSH_KEY }} #mans ssh private key, uz servera ir mans public key
+          SSH_PRIVATE_KEY: ${{ secrets.MONTA_SSH_KEY }} #mans ssh private key, uz servera ir mans public key
         run: |
           mkdir -p ~/.ssh 
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          scp -o StrictHostKeyChecking=no -r ./* zoomain@zoo.bumba.lv:/home/zoomain/public_html
+          scp -o StrictHostKeyChecking=no -r ./* montajav@visssliktiir.id.lv:/home/montajav/public_html
 
 #mkdir: izveido mapi
 #echo "atslega" > fails: iekopee atsleegu failaa
