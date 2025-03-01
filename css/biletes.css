@@ -4,20 +4,22 @@
   =====================================
   */
 
-html,
-body {
-  height: 100%;
-  margin: 0;
-}
-
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+  }
+/*
 body {
   font-family: Noto, sans;
   display: flex;
   flex-direction: column;
 }
+*/
 
 main {
   flex: 1;
+  height: 100%;
 }
 
 .content-container {
@@ -167,15 +169,17 @@ tr:nth-child(even) {
 .button-container button,
 .view-cart {
   padding: 10px 20px;
-  background-color: #c8a38a;
-  color: white;
+  background-color: #d08222;
+  color: #f9eff7;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
+  font-weight: bold;
 }
 .button-container button:hover {
   background-color: #e5c6b1;
+  color: #114f5a;
 }
 
 .text-button-container {
@@ -185,15 +189,17 @@ tr:nth-child(even) {
 .button {
   display: inline-block;
   padding: 10px 20px;
+  font-weight: bold;
   font-size: 1.2em;
-  color: #fff;
-  background-color: #c8a38a;
+  color: #f9eff7;
+  background-color: #d08222;
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 .button:hover {
   background-color: #e5c6b1;
+  color: #114f5a;
 }
 
 /*
@@ -201,17 +207,23 @@ tr:nth-child(even) {
         Cart count styling
     =====================================
   */
+/*
+  .cart-count {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 3px 5px;
+    font-size: 0.8em;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+*/
 
-.cart-count {
-  background-color: red;
-  color: white;
-  border-radius: 50%;
-  padding: 3px 5px;
-  font-size: 0.8em;
-  position: absolute;
-  top: 10px;
-  right: 20px;
+#basket-link:hover {
+  background: #ffffff;
 }
+
 
 /*
     =====================================
@@ -233,4 +245,61 @@ tr:nth-child(even) {
 }
 #cart-items th {
   background-color: #f2f2f2;
+}
+
+/*
+    =====================================
+        Footer styling
+    =====================================
+    */
+
+footer {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: #f4f4f4;
+  padding: 20px 0;
+  font-family: Arial, sans-serif;
+  text-decoration: none;
+      
+}
+  
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer-content a {
+  text-decoration: none;
+  color: #000;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.contact-info-footer,
+.footer-links {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+  
+.social-icons-footer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+  
+.social-icons-footer a img {
+  width: 30px;
+  height: 30px;
 }
