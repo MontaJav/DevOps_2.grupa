@@ -164,6 +164,12 @@ tr:nth-child(even) {
   justify-content: center;
   gap: 10px;
   margin-top: 20px;
+  font-weight: bold;
+}
+
+.button-container button {
+  font-weight: 600;
+  font-size: medium;
 }
 
 .button-container button,
@@ -172,12 +178,15 @@ tr:nth-child(even) {
   background-color: #d08222;
   color: #f9eff7;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
-  font-weight: bold;
 }
 .button-container button:hover {
+  background-color: #e5c6b1;
+  color: #114f5a;
+}
+
+.view-cart:hover {
   background-color: #e5c6b1;
   color: #114f5a;
 }
@@ -194,7 +203,6 @@ tr:nth-child(even) {
   color: #f9eff7;
   background-color: #d08222;
   text-decoration: none;
-  border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 .button:hover {
@@ -260,6 +268,7 @@ footer {
   background-color: #f4f4f4;
   padding: 20px 0;
   font-family: Arial, sans-serif;
+      
 }
   
 .footer-content {
