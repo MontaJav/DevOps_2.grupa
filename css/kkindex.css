@@ -1,9 +1,15 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif !important;
     margin: 0;
     padding: 0;
     text-align: center;
 }
+
+h1, h2, h3, p, a {
+  font-family: Arial, sans-serif !important;
+}
+
+
 
 /* Navigation Bar */
 #hederis {
@@ -63,7 +69,7 @@ body {
 
 /* Footer */
 #futeris {
-    background: #858585;
+    background-color: #f4f4f4;
     color: white;
     padding: 10px;
     position: relative;
