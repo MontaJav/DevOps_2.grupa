@@ -4,18 +4,18 @@
   =====================================
   */
 
-  html,
-  body {
-    height: 100%;
-    margin: 0;
-  }
-/*
+html,
 body {
-  font-family: Noto, sans;
-  display: flex;
-  flex-direction: column;
+  height: 120%;
+  margin: 0;
 }
-*/
+/*
+  body {
+    font-family: Noto, sans;
+    display: flex;
+    flex-direction: column;
+  }
+  */
 
 main {
   flex: 1;
@@ -53,10 +53,10 @@ h2 {
 }
 
 /*
-    =====================================
-        Ticket table styling
-    =====================================
-    */
+      =====================================
+          Ticket table styling
+      =====================================
+      */
 
 .data-left {
   text-align: left;
@@ -126,10 +126,10 @@ tr:nth-child(even) {
 }
 
 /*
-    =====================================
-        Ticket amount table styling
-    =====================================
-    */
+      =====================================
+          Ticket amount table styling
+      =====================================
+      */
 .ticket-table {
   width: 100%;
   max-width: 800px;
@@ -154,10 +154,10 @@ tr:nth-child(even) {
 }
 
 /*
-    =====================================
-        Button styling
-    =====================================
-    */
+      =====================================
+          Button styling
+      =====================================
+      */
 
 .button-container {
   display: flex;
@@ -182,12 +182,12 @@ tr:nth-child(even) {
   text-decoration: none;
 }
 .button-container button:hover {
-  background-color: #e5c6b1;
+  background-color: #c5c9bc;
   color: #114f5a;
 }
 
 .view-cart:hover {
-  background-color: #e5c6b1;
+  background-color: #c5c9bc;
   color: #114f5a;
 }
 
@@ -206,38 +206,37 @@ tr:nth-child(even) {
   transition: background-color 0.3s ease;
 }
 .button:hover {
-  background-color: #e5c6b1;
+  background-color: #c5c9bc;
   color: #114f5a;
 }
 
 /*
-    =====================================
-        Cart count styling
-    =====================================
-  */
+      =====================================
+          Cart count styling
+      =====================================
+    */
 /*
-  .cart-count {
-    background-color: red;
-    color: white;
-    border-radius: 50%;
-    padding: 3px 5px;
-    font-size: 0.8em;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-  }
-*/
+    .cart-count {
+      background-color: red;
+      color: white;
+      border-radius: 50%;
+      padding: 3px 5px;
+      font-size: 0.8em;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+    }
+  */
 
 #basket-link:hover {
   background: #ffffff;
 }
 
-
 /*
-    =====================================
-        Cart table styling
-    =====================================
-    */
+      =====================================
+          Cart table styling
+      =====================================
+      */
 
 #cart-items {
   width: 100%;
@@ -256,10 +255,10 @@ tr:nth-child(even) {
 }
 
 /*
-    =====================================
-        Footer styling
-    =====================================
-    */
+      =====================================
+          Footer styling
+      =====================================
+      */
 
 footer {
   width: 100%;
@@ -268,9 +267,8 @@ footer {
   background-color: #f4f4f4;
   padding: 20px 0;
   font-family: Arial, sans-serif;
-      
 }
-  
+
 .footer-content {
   display: flex;
   justify-content: space-between;
@@ -296,7 +294,7 @@ footer {
   align-items: center;
   gap: 10px;
 }
-  
+
 .social-icons-footer {
   flex: 1;
   display: flex;
@@ -305,7 +303,7 @@ footer {
   justify-content: center;
   gap: 10px;
 }
-  
+
 .social-icons-footer a img {
   width: 30px;
   height: 30px;
